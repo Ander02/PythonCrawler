@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Rest API Contar Palavras em um Site</h1>
+
+            <p>URL da API: /api/ocorrencias?url={url que deseja verificar}&criterio={criterio de busca}</p>
+
+            <form action="/api/ocorrencias" method="GET">
+                <fieldset>
+                    <legend>Formulário de Teste da API</legend>
+
+                    <label for="url" >URL</label>
+                    <input type="text" id="url" name="url" placeholder="URL" />
+
+                    <label for="criterio" >Critério de busca</label>
+                    <input type="text" id="criterio" name="criterio" placeholder="criterio de busca" />
+
+                    <input type="submit" value="buscar" />
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
