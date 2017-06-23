@@ -1,7 +1,7 @@
 #imports
 import urllib.request;
 import json;
-from flask import Flask, request, render_template, url_for, redirect;
+from flask import Flask, request, render_template;
 
 #Definindo o App
 app = Flask(__name__);
