@@ -1,30 +1,39 @@
 <!DOCTYPE html>
+<html ng-app="pythonCrawler">
+<head>
+    <title>Contador de Palavras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Controller -->
+    <div ng-controller="testFormController">
+        <h1>Rest API para contar palavras em um site</h1>
 
-<html>
-    <head>
-        <title>Contador de Palavras</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <h1>Rest API Contar Palavras em um Site</h1>
+        <p>URL da API: /api/ocorrencias/{criterio}/{url}</p>
 
-            <p>URL da API: /api/ocorrencias?url={url que deseja verificar}&criterio={criterio de busca}</p>
+        <form>
+            <fieldset>
+                <legend>Formulário de Teste da API</legend>
 
-            <form action="/api/ocorrencias" method="GET">
-                <fieldset>
-                    <legend>Formulário de Teste da API</legend>
+                <label for="url" >URL</label>
+                <input type="text" id="url" ng-model="url" placeholder="URL" />
 
-                    <label for="url" >URL</label>
-                    <input type="text" id="url" name="url" placeholder="URL" />
+                <label for="criterio" >Critério de busca </label>
+                <input type="text" id="criterio" ng-model="criterio" placeholder="criterio de busca" />
 
-                    <label for="criterio" >Critério de busca</label>
-                    <input type="text" id="criterio" name="criterio" placeholder="criterio de busca" />
+                <button ng-click="contarOcorrencias()">Buscar</button>
+            </fieldset>
+        </form>
 
-                    <input type="submit" value="buscar" />
-                </fieldset>
-            </form>
-        </div>
-    </body>
+        <span>Ocorrencias: </span><span ng-bind="ocorrencias"></span>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{{url_for('static', filename='js/angular.js')}}"></script>
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
+    <script src="{{url_for('static', filename='js/testFormController.js')}}"></script>
+
+</body>
 </html>

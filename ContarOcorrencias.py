@@ -13,12 +13,9 @@ def index():
 	return render_template('index.html');
 
 #Rota da API
-@app.route('/api/ocorrencias')
-def contarOcorrencias():
+@app.route('/api/ocorrencias/<criterio>/<path:url>', methods=['GET'])
+def contarOcorrencias(criterio, url):
 	try:
-		#Obter queryParameters
-		url = request.args.get('url');
-		criterio = request.args.get('criterio');
 		#Html do site obtido através dessa url
 		htmlDoSite = urllib.request.urlopen(url).read();
 		#Converter para string
